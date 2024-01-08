@@ -69,7 +69,7 @@
           "bundleName": "ypshopping.i18n.i18n"
         }
       },
-      "": {
+      "northWind": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
