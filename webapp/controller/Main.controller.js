@@ -1,5 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/model/json/JSONModel",
+	"sap/ui/core/mvc/Controller",
+	"sap/f/library"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -9,7 +11,14 @@ sap.ui.define([
 
         return Controller.extend("ypshopping.controller.Main", {
             onInit: function () {
-
+                
+            },
+            formatPriceWithEuro: function (sPrice) {
+                // Add the € sign to the Price and return it as a formatted string
+                return sPrice + " €";
+            },
+            onListItemPress: function (oEvent) {
             }
+
         });
     });

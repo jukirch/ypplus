@@ -22,6 +22,22 @@
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted"
     ></script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/ui/core/ComponentContainer"
+            ], function (ComponentContainer) {
+
+                new ComponentContainer({
+                    name : 'sap.f.FlexibleColumnLayoutWithFullscreenPage',
+                    height : "100%",
+                    settings : {
+                        id : "fullscreen_page"
+                    }
+                }).placeAt('content');
+            });
+        });
+    </script>
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
     <div
