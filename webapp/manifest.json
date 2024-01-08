@@ -72,7 +72,10 @@
       "northWind": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "usedBatch": false,
+          "defaultBindingMode": "TwoWay"
+        }
       }
     },
     "resources": {
