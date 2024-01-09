@@ -95,22 +95,55 @@
         "controlId": "app",
         "clearControlAggregation": false
       },
+
       "routes": [
         {
           "name": "RouteMain",
           "pattern": ":?query:",
           "target": [
-            "TargetMain"
+            "Main"
           ]
+        },
+        {
+          "name": "Main",
+          "pattern": ":?query:",
+          "target": [
+            "Main"
+          ]
+        },
+        {
+          "name": "detail",
+          "target": ["detail"]
+        },
+        {
+          "name": "detailDetail",
+          "target": ["detailDetail"]
         }
       ],
       "targets": {
-        "TargetMain": {
+        
+        "Main": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
+        },
+
+        "detail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Detail",
+          "viewName": "Detail"
+        },
+
+        "detailDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Detaildetail",
+          "viewName": "Detaildetail"
         }
       }
     },
