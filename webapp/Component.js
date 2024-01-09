@@ -5,7 +5,9 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "ypshopping/model/models"
+        "ypshopping/model/models",
+        "sap/f/library",
+        "sap/f/FlexibleColumnLayoutSemanticHelper"
     ],
     function (UIComponent, Device, models) {
         "use strict";
@@ -29,6 +31,20 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+                
+            },
+            getHelper: function () {
+                var oFCL = this.getRootControl().byId("fcl"),
+                oParams = new URLSearchParams(window.location.search),
+                    oSettings = {
+                        defaultTwoColumnLayoutType: LayoutType.TwoColumnsMidExpanded,
+                        defaultThreeColumnLayoutType: LayoutType.ThreeColumnsMidExpanded,
+                        mode: oParams.get("mode"),
+                        initialColumnsCount: 2,
+                        maxColumnsCount: oParams.get("max")
+                    };
+    
+                return FlexibleColumnLayoutSemanticHelper.getInstanceFor(oFCL, oSettings);
             }
         });
     }
